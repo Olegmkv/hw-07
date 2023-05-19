@@ -67,7 +67,8 @@ body {
 }
 
 .container {
-    width: 428px;
+    min-width: 370px;
+    max-width: 428px;
     padding: 0 16px;
     margin: 0 auto;
 
@@ -76,14 +77,14 @@ body {
 
 @media only screen and (min-width: 768px) {
     .container {
-        width: 768px;
+        max-width: 768px;
     }
 
 }
 
 @media only screen and (min-width: 1200px) {
     .container {
-        width: 1160px;
+        max-width: 1160px;
     }
 }
 
