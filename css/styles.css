@@ -67,11 +67,24 @@ body {
 }
 
 .container {
-    width: 1158px;
-    padding: 0 15px;
+    width: 428px;
+    padding: 0 16px;
     margin: 0 auto;
 
-    /*   outline: 2px solid tomato;*/
+    outline: 2px solid tomato;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1160px;
+    }
 }
 
 /*================== header ================*/
@@ -125,7 +138,6 @@ body {
 
     font-weight: 500;
     color: var(--second-color);
-    /* color: var(--button-accent-color); костиль для автоперевірки*/
 
     transition: color 250ms var(--func-time);
 }
@@ -197,20 +209,24 @@ body {
     color: var(--button-accent-color);
 }
 
-/*========= hero ===============*/
+/**
+  |============================
+  |          hero
+  |============================
+*/
 
 .hero {
-    padding: 188px 0;
-    max-width: 1440px;
+    padding: 112px 0;
+    max-width: 428px;
+
+    margin-left: auto;
+    margin-right: auto;
+    /* text-align: center; */
+
+    background-color: var(--second-color);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: center;
-
-    background-color: var(--second-color);
 
     background-image:
         linear-gradient(rgba(46, 47, 66, 0.7),
@@ -219,16 +235,39 @@ body {
 
 }
 
+@media only screen and (min-width: 768px) {
+    .hero {
+        max-width: 768px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .hero {
+        padding: 188px 0;
+        max-width: 1440px;
+    }
+}
+
+
 .hero-head {
-    max-width: 496px;
+    max-width: 320px;
     margin: 0 auto 48px;
 
+    text-align: center;
     font-weight: 700;
-    font-size: 56px;
-    line-height: 1.07;
-    letter-spacing: 0.02em;
+    font-size: 36px;
+    line-height: 1.11;
 
     color: var(--primary-fon-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .hero-head {
+        max-width: 496px;
+        font-size: 56px;
+        line-height: 1.07;
+    }
 }
 
 .hero-btn {
@@ -260,60 +299,117 @@ body {
     background-color: var(--button-accent-color);
 }
 
-
-/*======== Advantages ===========*/
+/**
+  |============================
+  |       Advantages
+  |============================
+*/
 
 .advantages {
-    padding: 120px 0;
+    padding: 96px 0;
 }
+
+@media only screen and (min-width: 1200px) {
+    .advantages {
+        padding: 120px 0;
+    }
+}
+
 
 .advant-list {
     display: flex;
-    /* gap: 24px; */
-}
-
-.advant-list .item:not(:last-child) {
-    margin-right: 24px;
+    flex-wrap: wrap;
+    gap: 72px 24px;
 }
 
 .advant-list .item {
-    width: calc((100% -72px) / 4);
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .advant-list .item {
+        width: calc((100% - 24px) / 2);
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .advant-list .item {
+        width: calc((100% - 72px) / 4);
+    }
 }
 
 .advant-card {
-    margin-bottom: 8px;
-    min-height: 112px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 4px;
-    background-color: var(--accent-color);
+    display: none;
 }
 
-.advant-card-svg {}
+@media only screen and (min-width: 1200px) {
+    .advant-card {
+        display: block;
+        margin-bottom: 8px;
+        min-height: 112px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 4px;
+        background-color: var(--accent-color);
+    }
+}
+
 
 .advant-head {
     margin-bottom: 8px;
 
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
 
     color: var(--second-color);
 }
 
-.advant-par {
-    width: 264px;
-    font-size: 16px;
+@media only screen and (min-width: 768px) {
+    .advant-head {
+        text-align: left;
+    }
 }
 
-/*=========== Product ============*/
+@media only screen and (min-width: 1200px) {
+    .advant-head {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
+
+.advant-par {
+    font-weight: 500;
+    color: var(--primary-text-color);
+}
+
+@media only screen and (min-width: 1200px) {
+    .advant-par {
+        font-weight: 400;
+    }
+}
+
+/**
+  |============================
+  |          Product
+  |============================
+*/
 
 .product {
-    padding-bottom: 120px;
+    display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    .product {
+        display: block;
+        padding-bottom: 120px;
+    }
 }
 
 .product-head,
@@ -323,7 +419,6 @@ body {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
-    letter-spacing: 0.02em;
 
     text-align: center;
 
@@ -340,80 +435,97 @@ body {
 
 }
 
-
-/*========== Team ============*/
+/**
+  |============================
+  |         Team
+  |============================
+*/
 
 .team-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 96px;
 
     background-color: var(--accent-color);
 }
 
+@media only screen and (min-width: 1200px) {
+    .team-section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
+
 .team-list {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .team-list {
+        gap: 64px 24px;
+    }
 }
 
 .team-list .item {
-
-    width: calc((100% - 72px) / 4);
+    width: 264px;
     background-color: var(--primary-fon-color);
 
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
+}
 
+.team-pfoto {
+    width: 100%;
 }
 
 .team-card {
-    padding: 32px 0;
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    text-align: center;
-
+    padding: 32px 16px;
     color: var(--primary-text-color);
-
 }
 
 .team-man {
     margin-bottom: 8px;
 
+    text-align: center;
     font-weight: 500;
     font-size: 20px;
+    line-height: 1.2;
 
     color: var(--second-color);
 }
 
 .team-proffesion {
     margin-bottom: 8px;
+
+    text-align: center;
 }
 
-/* =========== Social link ============== */
+/**
+  |============================
+  |    team  Social link
+  |============================
+*/
 
 .social {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 24px;
 }
 
 .social-link {
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 40px;
     height: 40px;
-
     border-radius: 50%;
 
     background-color: var(--button-color);
 
-    transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: var(--func-time);
+    transition: background-color 250ms var(--func-time);
 }
 
 .social-link:hover,
@@ -432,12 +544,22 @@ body {
     height: 24px;
 }
 
-/* ============ Customers ============ */
+/**
+  |============================
+  |        Customers
+  |============================
+*/
 
 .customers {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
 
+@media only screen and (min-width: 1200px) {
+    .customers {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
 }
 
 .head-customers {
@@ -447,27 +569,31 @@ body {
     font-size: 36px;
     line-height: 1.1;
     text-align: center;
-    letter-spacing: 0.02em;
 
     color: var(--second-color);
 }
 
 .customer-list {
     display: flex;
-    justify-content: space-between;
-    gap: 24px;
-
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 72px 16px;
 }
 
-.customer-item {}
+@media only screen and (min-width: 768px) {
+    .customer-list {
+        gap: 72px 24px;
+    }
+}
 
 .customer-link {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 168px;
+    width: 190px;
     height: 88px;
+
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
@@ -477,7 +603,12 @@ body {
 
     transition: border-color 250ms var(--func-time),
         color 250ms var(--func-time);
+}
 
+@media only screen and (min-width: 768px) {
+    .customer-link {
+        width: 168px;
+    }
 }
 
 .customer-link:hover,
@@ -486,13 +617,16 @@ body {
     color: var(--button-accent-color);
 }
 
-
 .customer-icon {
-
-    width: 104px;
+    width: 110px;
     height: 56px;
     fill: currentColor;
+}
 
+@media only screen and (min-width: 768px) {
+    .customer-icon {
+        width: 104px;
+    }
 }
 
 
