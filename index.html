@@ -19,9 +19,51 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-------------------- Header ----------->
-    <!-- <header class="header">
-      <div class="header-flex container">
+    <!------------------ Header mobile---------------->
+    <header class="header">
+      <div class="container-mobile container">
+        <div class="mobile-header">
+          <a href="./index.html" class="link logo"
+            >Web<span class="logo-gray">Studio</span>
+          </a>
+          <button type="button" class="mobile-menu" data-mobile-open>
+            <svg class="icon-menu" width="32" height="22">
+              <use href="./images/icons.svg#menu"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-menu">
+          <nav class="mobile-nav">
+            <ul class="list mobile-list">
+              <li class="item">
+                <a href="./index.html" class="link head-link head-link-active"
+                  >Studio</a
+                >
+              </li>
+              <li class="item">
+                <a href="./portfolio.html" class="link head-link">Portfolio</a>
+              </li>
+              <li class="item">
+                <a href="" class="link head-link">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <address class="adr">
+            <ul class="list adr-mobile">
+              <li class="item">
+                <a href="mailto:info@devstudio.com" class="link"
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li class="item">
+                <a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a>
+              </li>
+            </ul>
+          </address>
+        </div>
+      </div>
+      <!---------------header tablet pc-------------->
+      <div class="head-pc container">
         <nav class="head-nav">
           <a href="./index.html" class="link logo"
             >Web<span class="logo-gray">Studio</span>
@@ -39,9 +81,8 @@
               <a href="" class="link head-link">Contacts</a>
             </li>
           </ul>
-        </nav>-->
-    <!-----------------address-------------->
-    <!-- <address class="adr">
+        </nav>
+        <address class="adr">
           <ul class="list adr-list">
             <li class="item">
               <a href="mailto:info@devstudio.com" class="link"
@@ -54,7 +95,7 @@
           </ul>
         </address>
       </div>
-    </header>  -->
+    </header>
     <main>
       <!----------------- Hero -------------->
       <section class="hero">
@@ -639,6 +680,7 @@
         <button type="button" class="hero-btn modal-btn">Send</button>
       </div>
     </div>
+    <script src="./js/burger.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>

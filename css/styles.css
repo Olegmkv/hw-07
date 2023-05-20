@@ -88,7 +88,11 @@ body {
     }
 }
 
-/*================== header ================*/
+/**
+  |============================
+  |      header mobile
+  |============================
+*/
 
 .header {
     border-bottom: 1px solid var(--secondary-fon-color);
@@ -97,9 +101,39 @@ body {
         0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.header-flex {
-    display: flex;
-    justify-content: space-between;
+.container-mobile {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .container-mobile {
+        display: none;
+    }
+}
+
+.mobile-popup {
+    position: relative;
+}
+
+
+
+
+/**
+  |============================
+  |      header tablet pc
+  |============================
+*/
+
+
+.head-pc {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .head-pc {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .head-nav {
@@ -108,7 +142,6 @@ body {
 }
 
 .logo {
-    margin-right: 76px;
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
@@ -118,12 +151,26 @@ body {
     color: var(--button-color);
 }
 
+@media only screen and (min-width: 1200px) {
+    .logo {
+        margin-right: 76px;
+    }
+}
+
+
 .logo-gray {
     color: var(--second-color);
 }
 
 .head-list {
     display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 1200px) {
+    .head-list {
+        justify-content: left;
+    }
 }
 
 .head-list .item:not(:last-child) {
@@ -187,22 +234,31 @@ body {
     font-style: normal;
 }
 
-.adr-list {
-    display: flex;
+.adr-list {}
+
+@media only screen and (min-width: 1200px) {
+    .adr-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
 }
 
 .adr-list .link {
     display: block;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 
     color: var(--primary-text-color);
 
     transition: color 250ms var(--func-time);
 }
 
-.adr-list .item:not(:last-child) {
-    margin-right: 40px;
+@media only screen and (min-width: 1200px) {
+    .adr-list .link {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 }
 
 .adr-list .link:hover,
