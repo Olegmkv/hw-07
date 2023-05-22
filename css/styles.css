@@ -41,7 +41,6 @@ img {
     color: var(--second-color);
 }
 
-
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -76,7 +75,7 @@ body.modal-open {
     padding: 0 16px;
     margin: 0 auto;
 
-    outline: 2px solid tomato;
+    /* outline: 2px solid tomato; */
 }
 
 @media only screen and (min-width: 768px) {
@@ -94,7 +93,7 @@ body.modal-open {
 
 /**
   |============================
-  |      header mobile
+  |          header
   |============================
 */
 
@@ -105,124 +104,36 @@ body.modal-open {
         0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.container-mobile {
-    display: block;
-}
-
 @media only screen and (min-width: 768px) {
-    .container-mobile {
-        display: none;
-    }
-}
-
-.mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
-
-.mobile-btn {
-    cursor: pointer;
-    border: none;
-
-    background-color: var(--primary-fon-color);
-}
-
-.icon-menu {
-    width: 32px;
-    height: 22px;
-
-    fill: var(--second-color);
-}
-
-.mobile-menu {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    min-width: 320px;
-
-    padding: 24px 24px 40px 40px;
-
-    background-color: var(--primary-fon-color);
-}
-
-.mobile-close {
-    display: block;
-    margin: 0 0 32px auto;
-    padding: auto;
-
-    border-radius: 50%;
-
-    background-color: var(--primary-fon-color);
-}
-
-.mobile-link {
-    display: block;
-    margin-bottom: 40px;
-
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-
-    color: var(--second-color);
-    transition: color 250ms var(--func-time);
-}
-
-.mobile-link:hover,
-.mobile-link:focus {
-    color: var(--button-color);
-}
-
-.mobile-link.small {
-    margin-bottom: 48px;
-
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-}
-
-.mobile-adr {
-    margin-top: auto;
-}
-
-.link-active {
-    color: var(--button-accent-color);
-}
-
-.social.mobile-social {
-    justify-content: left;
-    gap: 56px;
-}
-
-/**
-  |============================
-  |      header tablet pc
-  |============================
-*/
-
-
-.head-pc {
-    display: none;
-}
-
-@media only screen and (min-width: 768px) {
-    .head-pc {
+    .head {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 }
 
 .head-nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+    .head-nav {
+        justify-content: center;
+        margin-right: 122px;
+
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+    .head-nav {
+        margin-right: 332px;
+    }
 }
 
 .logo {
@@ -238,7 +149,7 @@ body.modal-open {
     color: var(--button-color);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .logo {
         margin-right: 76px;
     }
@@ -248,14 +159,39 @@ body.modal-open {
     color: var(--second-color);
 }
 
-.head-list {
-    margin-right: auto;
+.mobile-btn {
+    cursor: pointer;
+    border: none;
 
-    display: flex;
-    justify-content: space-between;
+    background-color: var(--primary-fon-color);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
+    .mobile-btn {
+        display: none;
+    }
+}
+
+.icon-menu {
+    width: 32px;
+    height: 22px;
+
+    fill: var(--second-color);
+}
+
+.head-list {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .head-list {
+        display: flex;
+        justify-content: space-between;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
     .head-list {
         justify-content: left;
     }
@@ -319,7 +255,14 @@ body.modal-open {
 }
 
 .adr {
-    font-style: normal;
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .adr {
+        display: block;
+        font-style: normal;
+    }
 }
 
 .adr-list {
@@ -329,7 +272,7 @@ body.modal-open {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .adr-list {
         flex-direction: row;
         gap: 40px;
@@ -346,7 +289,7 @@ body.modal-open {
     transition: color 250ms var(--func-time);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .head-adr-link {
         padding-top: 24px;
         padding-bottom: 24px;
@@ -441,14 +384,12 @@ body.modal-open {
     }
 }
 
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .hero {
         padding: 188px 0;
         max-width: 1440px;
     }
 }
-
 
 .hero-head {
     max-width: 320px;
@@ -509,7 +450,7 @@ body.modal-open {
     padding: 96px 0;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .advantages {
         padding: 120px 0;
     }
@@ -535,7 +476,7 @@ body.modal-open {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .advant-list .item {
         width: 264px;
         /* width: calc((100% - 72px) / 4); */
@@ -546,7 +487,7 @@ body.modal-open {
     display: none;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .advant-card {
         display: block;
         margin-bottom: 8px;
@@ -579,7 +520,7 @@ body.modal-open {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .advant-head {
         font-weight: 500;
         font-size: 20px;
@@ -592,7 +533,7 @@ body.modal-open {
     color: var(--primary-text-color);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .advant-par {
         font-weight: 400;
     }
@@ -608,7 +549,7 @@ body.modal-open {
     display: none;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .product {
         display: block;
         padding-bottom: 120px;
@@ -652,7 +593,7 @@ body.modal-open {
     background-color: var(--accent-color);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .team-section {
         padding-top: 120px;
         padding-bottom: 120px;
@@ -765,7 +706,7 @@ body.modal-open {
     padding-bottom: 96px;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .customers {
         padding-top: 120px;
         padding-bottom: 120px;
@@ -839,8 +780,12 @@ body.modal-open {
     }
 }
 
+/**
+  |============================
+  |         portfolio
+  |============================
+*/
 
-/*====== portfolio button =========*/
 .portfolio {
     padding-top: 96px;
     padding-bottom: 120px;
@@ -850,7 +795,8 @@ body.modal-open {
 .filter-list {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 16px 24px;
     margin-bottom: 72px;
 }
 
@@ -986,7 +932,7 @@ body.modal-open {
     background-color: var(--second-color);
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .footer {
         padding-top: 100px;
         padding-bottom: 100px;
@@ -1005,7 +951,7 @@ body.modal-open {
     .footer-container {}
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .footer-container {
         margin-left: 0;
     }
@@ -1019,7 +965,7 @@ body.modal-open {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .footer-logo {
         margin-right: 120px;
     }
@@ -1064,7 +1010,7 @@ body.modal-open {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .footer-social {
         margin-right: 80px;
     }
@@ -1119,7 +1065,7 @@ body.modal-open {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1158px) {
     .footer-subscr {
         margin-right: 0;
     }
@@ -1214,7 +1160,12 @@ body.modal-open {
     fill: var(--primary-fon-color);
 }
 
-/* =============== modal ================== */
+/**
+  |============================
+  |          modal
+  |============================
+*/
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -1236,7 +1187,6 @@ body.modal-open {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-
 }
 
 .modal {
@@ -1245,8 +1195,8 @@ body.modal-open {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 408px;
-    padding: 72px 24px 24px 24px;
+    width: 392px;
+    padding: 72px 16px 24px 16px;
     min-height: 576px;
     border-radius: 4px;
 
@@ -1259,6 +1209,20 @@ body.modal-open {
 
     transition: transform 250ms var(--func-time);
 
+}
+
+@media only screen and (min-width: 768px) {
+    .modal {
+        width: 408px;
+        padding: 72px 25px 24px 23px;
+    }
+
+}
+
+@media only screen and (min-width: 1158px) {
+    .modal {
+        padding: 72px 24px 24px 24px;
+    }
 }
 
 .modal-close {
@@ -1306,11 +1270,7 @@ body.modal-open {
     margin-bottom: 16px;
 
     font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
     text-align: center;
-    letter-spacing: 0.02em;
-
 }
 
 .modal-label {
@@ -1319,9 +1279,13 @@ body.modal-open {
 
     font-size: 12px;
     line-height: 1.17;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.04em;
 
     color: var(--icon-color);
+}
+
+.modal-label.first {
+    letter-spacing: 0.01em;
 }
 
 .modal-name-block {
@@ -1354,13 +1318,20 @@ body.modal-open {
 
 .modal-input.comment {
     padding: 8px 8px 8px 16px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 
     height: 120px;
     resize: none;
 
     font-size: 12px;
 }
+
+@media only screen and (min-width: 1158px) {
+    .modal-input.comment {
+        margin-bottom: 16px;
+    }
+}
+
 
 .modal-icon {
     position: absolute;
@@ -1428,3 +1399,77 @@ body.modal-open {
 }
 
 .modal-btn {}
+
+/**
+  |============================
+  |     mobile menu
+  |============================
+*/
+
+.mobile-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+
+    padding: 24px 24px 40px 40px;
+
+    background-color: var(--primary-fon-color);
+}
+
+.mobile-close {
+    margin: 0 0 32px auto;
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: var(--primary-fon-color);
+}
+
+.mobile-link {
+    display: block;
+    margin-bottom: 40px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+
+    color: var(--second-color);
+    transition: color 250ms var(--func-time);
+}
+
+.mobile-link:hover,
+.mobile-link:focus {
+    color: var(--button-color);
+}
+
+.mobile-link.small {
+    margin-bottom: 48px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.mobile-adr {
+    margin-top: auto;
+}
+
+.link-active {
+    color: var(--button-accent-color);
+}
+
+.social.mobile-social {
+    justify-content: left;
+    gap: 56px;
+}
