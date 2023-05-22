@@ -380,8 +380,38 @@ body.modal-open {
     background-image:
         linear-gradient(rgba(46, 47, 66, 0.7),
             rgba(46, 47, 66, 0.7)),
-        url(../images/hero/people-office.jpg);
+        url(../images/hero/people-office_428.jpg);
+}
 
+@media (min-devace-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .hero {
+        background-image:
+            linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/hero/people-office_428@2x.jpg);
+    }
+}
+
+@media only screen and (min-width: 429px) {
+    .hero {
+        background-image:
+            linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/hero/people-office_768.jpg);
+    }
+
+    @media (min-devace-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .hero {
+            background-image:
+                linear-gradient(rgba(46, 47, 66, 0.7),
+                    rgba(46, 47, 66, 0.7)),
+                url(../images/hero/people-office_768@2x.jpg);
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -390,6 +420,27 @@ body.modal-open {
     }
 
 }
+
+@media only screen and (min-width: 769px) {
+    .hero {
+        background-image:
+            linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/hero/people-office_1440.jpg);
+    }
+
+    @media (min-devace-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .hero {
+            background-image:
+                linear-gradient(rgba(46, 47, 66, 0.7),
+                    rgba(46, 47, 66, 0.7)),
+                url(../images/hero/people-office_1440@2x.jpg);
+        }
+    }
+}
+
 
 @media only screen and (min-width: 1200px) {
     .hero {
@@ -579,12 +630,13 @@ body.modal-open {
 
 .product-list {
     display: flex;
+    justify-content: center;
     gap: 24px;
 }
 
 .product-list .item {
-    width: calc((100% - 48px) / 3);
-
+    /* width: calc((100% - 48px) / 3); */
+    width: 360px;
 }
 
 /**
