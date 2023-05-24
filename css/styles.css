@@ -13,6 +13,15 @@
     --func-time: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
 h1,
 h2,
@@ -80,14 +89,16 @@ body.modal-open {
 
 @media only screen and (min-width: 768px) {
     .container {
-        max-width: 768px;
+        min-width: none;
+        max-width: none;
+        width: 768px;
     }
 
 }
 
 @media only screen and (min-width: 1158px) {
     .container {
-        max-width: 1440px;
+        width: 1158px;
         padding: 0 15px;
     }
 }
@@ -108,14 +119,6 @@ body.modal-open {
 @media only screen and (min-width: 768px) {
     .head {
         display: flex;
-    }
-}
-
-@media only screen and (min-width: 1158px) {
-    .head {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1128px;
     }
 }
 
@@ -194,8 +197,6 @@ body.modal-open {
 @media only screen and (min-width: 768px) {
     .head-list {
         display: flex;
-
-        /* margin-right: auto; */
     }
 }
 
@@ -268,21 +269,34 @@ body.modal-open {
 }
 
 .adr-list {
-    display: flex;
-    flex-direction: column;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 @media only screen and (min-width: 1158px) {
     .adr-list {
-        flex-direction: row;
+        padding: 0;
+        display: flex;
         gap: 40px;
+        justify-content: center;
+    }
+}
+
+.adr-item:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+@media only screen and (min-width: 1158px) {
+    .adr-item:not(:last-child) {
+        margin-bottom: 0;
     }
 }
 
 .head-adr-link {
     display: block;
-    padding-top: 6px;
-    padding-bottom: 6px;
+
+    font-size: 12px;
+    line-height: 1.17;
 
     color: var(--primary-text-color);
 
@@ -293,6 +307,10 @@ body.modal-open {
     .head-adr-link {
         padding-top: 24px;
         padding-bottom: 24px;
+
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
     }
 }
 
@@ -469,16 +487,18 @@ body.modal-open {
 
 @media only screen and (min-width: 768px) {
     .advant-list .item {
-        max-width: 356px;
-        width: calc((100% - 24px) / 2);
+        width: 356px;
+        /* max-width: 356px;
+        width: calc((100% - 24px) / 2); */
     }
 
 }
 
 @media only screen and (min-width: 1158px) {
     .advant-list .item {
-        max-width: 264px;
-        width: calc((100% - 72px) / 4);
+        width: 264px;
+        /* max-width: 264px;
+        width: calc((100% - 72px) / 4); */
     }
 }
 
@@ -616,8 +636,9 @@ body.modal-open {
 .team-item {
     display: block;
 
-    max-width: 264px;
-    width: 100%;
+    width: 264px;
+    /* max-width: 264px; */
+    /* width: 100%; */
 
     background-color: var(--primary-fon-color);
 
@@ -627,20 +648,20 @@ body.modal-open {
 
 @media only screen and (min-width: 768px) {
     .team-item {
-        width: calc((100% - 24) / 2);
+        /* width: calc((100% - 24) / 2); */
     }
 }
 
 @media only screen and (min-width: 1158px) {
     .team-item {
-        width: calc((100% - 72) / 4);
+        /* width: calc((100% - 72) / 4); */
     }
 }
 
 
 .team-pfoto {
-    display: block;
-    width: 100%;
+    /* display: block; */
+    /* width: 100%; */
 }
 
 .team-card {
@@ -1154,13 +1175,18 @@ body.modal-open {
 .footer-email {
     position: relative;
     display: block;
+    margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-email {
+        margin-bottom: 0;
+    }
 }
 
 .footer-email-input {
-    margin-bottom: 16px;
     width: 100%;
     height: 40px;
-
 
     padding-left: 16px;
     font-family: 'Roboto';
@@ -1279,7 +1305,9 @@ body.modal-open {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 392px;
+    width: 100%;
+    max-width: 392px;
+
     padding: 72px 16px 24px 16px;
     min-height: 576px;
     border-radius: 4px;
@@ -1356,6 +1384,13 @@ body.modal-open {
     font-weight: 500;
     text-align: center;
 }
+
+@media only screen and (max-width: 414px) {
+    .modal-head {
+        font-size: 13px;
+    }
+}
+
 
 .modal-label {
     display: block;
@@ -1452,6 +1487,12 @@ body.modal-open {
     color: var(--icon-color);
 }
 
+@media only screen and (max-width: 414px) {
+    .modal-check {
+        font-size: 10px;
+    }
+}
+
 .input-check {
     appearance: none;
 }
@@ -1545,6 +1586,17 @@ body.modal-open {
     color: var(--second-color);
     transition: color 250ms var(--func-time);
 }
+
+@media only screen and (max-width: 414px) {
+    .mobile-link.tel {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 1.2;
+    }
+}
+
+
+
 
 .mobile-item:not(:last-child),
 .mobile-adr:not(:last-child) {
